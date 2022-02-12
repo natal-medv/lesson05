@@ -34,4 +34,21 @@ public class AppTest {
     public void testIsArray() {
         Assertions.assertTrue(((Object)ais.arr instanceof int[]));
     }
+
+    @Test
+    public void testArrSize() {
+        Assertions.assertEquals(10, ais.size());
+    }
+
+    @Test
+    public void testGetNegative() {
+        IndexStorage indexStorage = new IndexStorage(5);
+        Assertions.assertEquals(-1, indexStorage.get(1));
+    }
+
+    @Test
+    public void testGetPositive() {
+        IndexStorage indexStorage = new IndexStorage(5);
+        Assertions.assertEquals(4, indexStorage.get(4));
+    }
 }
